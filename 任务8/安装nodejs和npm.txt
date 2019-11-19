@@ -1,0 +1,2 @@
+https://www.cnblogs.com/xingyunfashi/p/9272041.html
+ubuntu18.04自带node  先node -v 正常显示版本号，再安装npm即可

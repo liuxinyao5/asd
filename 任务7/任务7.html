@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取邮箱用户名</title>
+</head>
+<body>
+    <input type="text" id="mail"><br/>
+    <input type="button" value="获取用户名" id="btn"><br/>
+    <input type="text" id="y" placeholder="年yy / yyyy" style="width:70px">-
+    <input type="text" id="m" placeholder="月m / mm" style="width:60px">-
+    <input type="text" id="d" placeholder="日d / dd" style="width:60px">&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" id="h" placeholder="时h / hh" style="width:60px">:
+    <input type="text" id="i" placeholder="分i / ii" style="width:60px">:
+    <input type="text" id="s" placeholder="秒s / ss" style="width:60px"><br>
+    <input type="button" value="获取时间" id="btn2"><br/>
+    <h3 id="t"></h3>
+
+    <script>
+        function a(id){
+            return document.getElementById(id);
+        }
+
+        var mail = a('mail');
+        // console.log(Boolean(mail.value));
+        // console.log(typeof mail.value);
+        // var m = mail.value;
+        var p = /^\w+\@\w+(\.\w+)+$/;
+        // console.log(m.search(p));
+        // console.log(m.match(p));
+        var btn = a('btn');
+        btn.onclick = function (){
+            // console.log(mail.value);
+            if(mail.value.match(p)){
+                var user = mail.value.split("@");
+                alert("您的用户名是：" + user[0]);
+            } else {
+                // console.log(mail.value.match(p));
+                alert('邮箱格式不正确');
+            }
+        }
+
+        /* ************时间处理**************** */
+
+        var t = a('t');
+        // var time = new Date();
+        var y = a('y');
+        var m = a('m');
+        var d = a('d');
+        var h = a('h');
+        var i = a('i');
+        var s = a('s');
+        a('btn2').onclick = function (){
+            t.innerText = '';
+            var time = new Date();
+            if (y.value != '') {
+                if(y.value == 'yy'){
+                    t.innerHTML = t.innerText + (time.getFullYear()+'').slice(-2)+'年';
+                } else if (y.value == 'yyyy') {
+                    t.innerHTML = t.innerText + time.getFullYear()+'年';
+                } else {
+                    alert('请输入正确年份格式');
+                }
+            }
+            if (m.value != '') {
+                if(m.value == 'mm'){
+                    if (String(time.getMonth()+1).length < 2){
+                        t.innerHTML = t.innerText + '0' + (time.getMonth()+1) + '月';
+                    } else {
+                        t.innerHTML = t.innerText + (time.getMonth()+1) + '月';
+                    }
+                } else if (m.value == 'm') {
+                    t.innerHTML = t.innerText + (time.getMonth()+1) + '月';
+                } else {
+                    alert('请输入正确月份格式');
+                }
+            }
+            if (d.value != '') {
+                if(d.value == 'dd'){
+                    if (String(time.getDate()).length < 2){
+                        t.innerHTML = t.innerText + '0' + time.getDate() + '日';
+                    } else {
+                        t.innerHTML = t.innerText + time.getDate() + '日';
+                    }
+                } else if (d.value == 'd') {
+                    t.innerHTML = t.innerText + time.getDate() + '日';
+                } else {
+                    alert('请输入正确日格式');
+                }
+            }
+            if (h.value != '') {
+                if(h.value == 'hh'){
+                    if (String(time.getHours()).length < 2){
+                        t.innerHTML = t.innerText + '0' + time.getHours() + '时';
+                    } else {
+                        t.innerHTML = t.innerText + time.getHours() + '时';
+                    }
+                } else if (h.value == 'h') {
+                    t.innerHTML = t.innerText + time.getHours() + '时';
+                } else {
+                    alert('请输入正确小时格式');
+                }
+            }
+            if (i.value != '') {
+                if (i.value == 'ii'){
+                    if (String(time.getMinutes()).length < 2){
+                        t.innerHTML = t.innerText + '0' + time.getMinutes() + '分';
+                    } else {
+                        t.innerHTML = t.innerText + time.getMinutes() + '分';
+                    }
+                } else if (i.value == 'i') {
+                    t.innerHTML = t.innerText + time.getMinutes() + '分';
+                } else {
+                    alert('请输入正确分钟格式');
+                }
+            }
+            if (s.value != '') {
+                if (s.value == 'ss'){
+                    if (String(time.getSeconds()).length < 2){
+                        t.innerHTML = t.innerText + '0' + time.getSeconds() + '秒';
+                    } else {
+                        t.innerHTML = t.innerText + time.getSeconds() + '秒';
+                    }
+                } else if (s.value == 's') {
+                    t.innerHTML = t.innerText + time.getSeconds() + '秒';
+                } else {
+                    alert('请输入正确秒钟格式');
+                }
+            }
+                
+        }
+
+
+    </script>
+</body>
+</html>
