@@ -1,0 +1,143 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /* background: rgb(135, 214, 243, 0.5); */
+    background: url('https://goss.veer.com/creative/vcg/veer/1600water/veer-307853994.jpg');
+    /* opacity: 0.25; */
+}
+
+.page-wrapper {
+    /* background: url('https://goss.veer.com/creative/vcg/veer/1600water/veer-307853994.jpg'); */
+    background: rgba(91, 201, 241, 0.9);
+    opacity: 0.9;
+    width:1000px;
+    margin:0 auto;
+}
+
+.clear {
+    clear: both;
+}
+
+#zen-intro h1 {
+    font-size: 55px;
+    margin-left: 100px;
+    color: grey;
+    margin-bottom: 0;
+    padding-top:50px;
+    margin-top: 0;
+}
+
+#zen-intro h2 {
+    font-size: 45px;
+    margin:0 130px 0 0;
+    float:right;
+    color: rgb(139, 165, 139);
+}
+
+#zen-summary p:first-child {
+    /* border: white solid 5px; */
+    width: 900px;
+    margin:0 auto;
+    font-style: italic;
+    font-size: 16px;
+}
+
+#zen-summary p:nth-child(2) {
+    float:right;
+    margin-right: 20px;
+    font-size: 14px;
+}
+
+#zen-preamble, #zen-explanation, #zen-participation, #zen-benefits, #zen-requirements {
+    background: rgba(91, 201, 241, 0.9);
+    border: rgb(218, 59, 59) solid 10px;
+    width: 550px;
+    margin-top: 30px;
+    padding: 30px;
+}
+
+#zen-explanation, #zen-benefits {
+    float:right;
+    border-right: none;
+    
+}
+
+#zen-preamble, #zen-participation, #zen-requirements {
+    float:left;
+    border-left: none;
+}
+
+footer {
+    position: fixed;
+    left: 10px;
+    top: 300px;
+    width: 50px;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+    line-height: 30px;
+}
+
+footer a:hover {
+    color: blue;
+}
+
+#design-selection {
+    position: fixed;
+    right: 10px;
+    top: 200px;
+    width: 200px;
+}
+
+#design-selection li {
+    line-height: 25px;
+}
+
+.design-name {
+    text-decoration: none;
+    color: rebeccapurple;
+    font-size: 18px;
+}
+
+.designer-name {
+    text-decoration: none;
+    color: cyan;
+}
+
+#design-archives, #zen-resources {
+    float: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#zen-resources li, #design-archives li {
+    float: left;
+    margin-right: 15px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+#zen-resources a, #design-archives a {
+    color: rgb(255, 123, 0);
+}
+
+#zen-resources a:hover {
+    color: black;
+}
+
+#design-archives a:hover {
+    color: black;
+}

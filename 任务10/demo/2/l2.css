@@ -1,0 +1,235 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 40%;
+    height: 800px;
+    background: #c879b2;
+    color: white;
+    float: left;
+}
+
+.clear {
+    clear: both;
+}
+
+header h1 {
+    transform: rotate(-90deg);
+    float: left;
+    font-size: 16px;
+    font-weight: 900;
+    margin-top: 120px;
+    margin-left: -20px;
+}
+
+header h2 {
+    width: 50%;
+    height: 500px;
+    float: right;
+    background: #0d2c40;
+    margin-top: 0;
+    font-size: 38px;
+    padding-top: 300px;
+    text-align: center;
+}
+
+#zen-summary {
+    width: 60%;
+    float: right;
+    height: 800px;
+    /* background: #c879b2; */
+    background-image: linear-gradient(#c879b2, #9198e5);
+}
+
+#zen-summary p:first-child {
+    margin-top: 330px;
+}
+
+#zen-summary p {
+    color: white;
+    /* text-indent: 2em; */
+    font-size: 18px;
+    margin-left: 4em;
+    margin-right: 2em;
+}
+
+#zen-summary a {
+    color: white;
+}
+
+#zen-preamble {
+    width: 100%;
+    height: 400px;
+    /* padding-top: 150px;
+    padding-left: 20%;
+    padding-right: 20%; */
+    /* background-color: #ccc; */
+}
+
+#zen-preamble h3 {
+    margin-top: 150px;
+}
+
+#zen-preamble h3, #zen-preamble p:nth-child(2), #zen-preamble p:nth-child(3) {
+    width: 40%;
+    float: left;
+    margin-left: 20%;
+}
+
+#zen-preamble p:nth-child(4) {
+    background: rgba(0, 188, 217, 0.8);
+    width: 20%;
+    margin:0 20% 0 60%;
+    height: 500px;
+    padding:150px 20px 0 20px;
+    color: white;
+    line-height: 26px;
+}
+
+#zen-explanation {
+    background: url('http://ww1.sinaimg.cn/large/d75e3906jw1e9w4jtkm3oj20p00ig79a.jpg');
+    height: 600px;
+}
+
+#zen-explanation h3 {
+    transform: rotate(-90deg);
+    width: 400px;
+    float: left;
+    margin-top: 200px;
+    margin-left: -50px;
+    background: #0d2c40;
+    color: white;
+}
+
+#zen-explanation p {
+    background: #0d2c40;
+    width: 400px;
+    margin: 100px 0 0 200px;
+    color: white;
+    position: relative;
+    top: 100px;
+    height: 250px;
+    font-size: 18px;
+}
+
+#zen-explanation p:last-child {
+    margin-top: 0;
+}
+
+#zen-participation {
+    width: 33%;
+    height: 820px;
+    text-align: center;
+    background-image: linear-gradient(#c879b2, #9198e5);
+    color: white;
+    line-height: 30px;
+    float: left;
+}
+
+#zen-participation a {
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+}
+
+#zen-participation h3 {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#zen-participation p {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 18px;
+}
+
+#zen-benefits {
+    width: 33%;
+    height: 820px;
+    text-align: center;
+    background-image: linear-gradient(#9198e5, #c879b2);
+    color: white;
+    line-height: 30px;
+    float: left;
+}
+
+#zen-benefits h3 {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 250px;
+}
+
+#zen-benefits p {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 18px;
+}
+
+#zen-requirements {
+    width: 34%;
+    height: 820px;
+    text-align: center;
+    background-image: linear-gradient(#c879b2, #9198e5);
+    color: white;
+    line-height: 30px;
+    float: left;
+}
+
+#zen-requirements a {
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+}
+
+footer a {
+    text-decoration: none;
+    position: relative;
+    top: -20px;
+    color: black;
+}
+
+footer a:hover {
+    color: chartreuse;
+}
+
+li {
+    list-style-type: none;
+}
+
+#design-selection {
+    width: 33%;
+    float: left;
+    background: #9198e5;
+    height: 250px;
+    margin-top: -20px;
+}
+
+#design-selection a {
+    color: black;
+}
+
+#design-archives {
+    width: 33%;
+    float: left;
+    background: #c879b2;
+    height: 250px;
+    margin-top: -20px;
+}
+
+#design-archives a {
+    color: black;
+}
+
+#zen-resources {
+    width: 34%;
+    float: left;
+    background: #9198e5;
+    height: 250px;
+    margin-top: -20px;
+}
+
+#zen-resources a {
+    color: black;
+}

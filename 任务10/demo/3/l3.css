@@ -1,0 +1,75 @@
+body {
+    font-size: 18px;
+    font-weight: 800;
+    background:url('http://file06.lvmeng.cn/2016/0419/ea3def1b868201a0c48b5c0d8c668437.jpg') fixed;
+}
+
+header {
+    margin:100px auto 50px;
+    width: 800px;
+    text-align: right;
+}
+
+.clear {
+    clear: both;
+}
+
+header h1 {
+    font-size: 25px;
+}
+
+header h2 {
+    font-size: 40px;
+}
+
+#zen-summary p{
+    font-style: italic;
+    margin-left: 300px;
+}
+
+#zen-summary a {
+    color: black;
+}
+
+#zen-preamble {
+    width: 1000px;
+    float: left;
+    text-align: right;
+    margin-top: 100px;
+}
+
+#zen-explanation {
+    width: 1000px;
+    float: right;
+    margin-top: 50px;
+}
+
+#zen-participation {
+    width: 1000px;
+    float: left;
+    text-align: right;
+    margin-top: 50px;
+}
+
+#zen-benefits {
+    width: 1000px;
+    float: right;
+    margin-top: 50px;
+}
+
+#zen-requirements {
+    width: 1000px;
+    float: left;
+    text-align: right;
+    margin-top: 50px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(151, 113, 18);
+}
+
+#design-selection, #design-archives, #zen-resources {
+    width: 33%;
+    float: left;
+}
