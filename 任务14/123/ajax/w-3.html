@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>聊天</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="./fonts/font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="./w-3.css">
+</head>
+
+<body>
+    <div id="nav">
+        <div class="nav-1"><i class="fa fa-angle-left"></i>
+        </div>
+        <div class="nav-2">
+            <p>兄弟连，金老师</p>
+        </div>
+        <div class="nav-3">
+            <i class="fa fa-ellipsis-h"></i>
+        </div>
+    </div>
+
+
+    <div id="c"></div>
+
+    <div id="nav2">
+        <div class="btn1">
+            <i class="fa fa-microphone"></i>
+        </div>
+        <div class="input">
+            <form action="" id="text1">
+                <input type="text" class="i1" id="text" value="">
+            </form>
+        </div>
+        <div class="btn2">
+            <p id="b2-1">切换</p>
+        </div>
+        <div class="btn2">
+            <p id="b2-2">发送</p>
+        </div>
+    </div>
+
+
+    <script src="./jquery/jquery.min.js"></script>
+
+    <script>
+
+
+
+        window.onload = function () {
+            var num = true;
+            $('#b2-1')[0].onclick = function () {
+                if (num) {
+                    num = false;
+                } else {
+                    num = true;
+                }
+                $('#text1')[0].reset();
+            };
+            readfile();
+            $('#b2-2')[0].onclick = function () {
+                let content = $('#c')[0];
+                let val = $('#text').val();
+                if (val == '') {
+                    alert('不能发送空消息');
+                } else {
+                    if (num) {
+                        content.innerHTML += '<div class="c-right"><div class="img-r"><img src="./img/photos/p7.jpg"></div><div class="content"><div class="arrow-right"></div><br><p>' + val + '</p></div></div><div class="clear"></div>';
+                    } else {
+                        content.innerHTML += '<div class="c-left"><div class="img-l"><img src="./img/photos/p6.jpg"></div><div class="content"><div class="arrow-left"></div><br><p>' + val + '</p></div></div><div class="clear"></div>';
+                    }
+                }
+                let con = {};
+                if (num) {
+                    con.one = val;
+                } else {
+                    con.two = val;
+                }
+                let str = JSON.stringify(con);
+                $('#text1')[0].reset();
+                // 内容过多时,将滚动条放置到最底端
+                content.scrollTop = content.scrollHeight;
+                writefile(str);
+            };
+
+
+
+        };
+
+        //读取文件
+        function readfile() {
+            $.ajax({
+                'url': 'http://127.0.0.1:3000/read',
+                'method': 'POST',
+                'data': 'text',
+                'success': function (data) {
+                    // console.log(data);
+                    // console.log(JSON.parse(data));
+                    let t1 = JSON.parse(data);
+                    // console.log(typeof t1);
+                    // console.log(t1[0]);
+                    var con = [];
+                    for (var i in t1) {
+                        var t2 = JSON.parse(t1[i]);
+                        for (var j in t2) {
+                            // console.log(t2[j]);
+                            // console.log(typeof j);
+                            var content = $('#c')[0];
+                            if (j == 'one') {
+                                content.innerHTML += '<div class="c-right"><div class="img-r"><img src="./img/photos/p7.jpg"></div><div class="content"><div class="arrow-right"></div><br><p>' + t2[j] + '</p></div></div><div class="clear"></div>';
+                            } else {
+                                content.innerHTML += '<div class="c-left"><div class="img-l"><img src="./img/photos/p6.jpg"></div><div class="content"><div class="arrow-left"></div><br><p>' + t2[j] + '</p></div></div><div class="clear"></div>';
+                            }
+                        }
+                    }
+                    // console.log(con);
+                }
+            });
+        }
+
+        //写入文件
+        function writefile(texts) {
+            $.ajax({
+                'url': 'http://127.0.0.1:3000/write',
+                'method': 'POST',
+                'data': texts,
+                'success': function (data) {
+                    console.log(data);
+                    // let obj = JSON.parse(data);
+                    // console.log(obj);
+                }
+            });
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
