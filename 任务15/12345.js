@@ -8,14 +8,26 @@ $(function(){
     // 轮播图区域左侧导航鼠标移入移出事件
     // console.log($('.item'));
     // console.log($('.banner-hidden')[0].style);
-    for (let i=0; i<7 ; i++) {
+    /* for (let i=0; i<7 ; i++) {
         $('.item')[i].onmouseover = function(){
             $('.banner-hidden')[i].style.display = 'block';
         };
         $('.item')[i].onmouseout = function(){
             $('.banner-hidden')[i].style.display = 'none';
         }
-    }
+    } */
+    // console.log($('.item'));
+    $('.item').mouseenter(function(){
+        // console.log($(this));
+        var index = $('.item').index($(this)[0]);
+        // console.log(index);
+        $('.banner-hidden:eq(' + index + ')').show();
+    });
+
+    $('.item').mouseleave(function(){
+        var index = $('.item').index($(this)[0]);
+        $('.banner-hidden:eq(' + index + ')').hide();
+    });
 
     $('.banner-hidden').mouseover(function(){
         $(this).show();
